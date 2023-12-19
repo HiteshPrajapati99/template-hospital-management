@@ -1,0 +1,159 @@
+openapi: 3.0.0
+info:
+  title: PETdx
+  version: 1.0.0
+servers:
+  - url: http://{{url}}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: Auth
+  - name: Doctor
+  - name: Doctor > Clinics
+  - name: Pet
+  - name: Pet > Spices
+  - name: Pet > Color
+  - name: Pet > Breed
+  - name: Pet > Animal-Type
+paths:
+  /api/login:
+    post:
+      tags:
+        - Auth
+      summary: LOGIN
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: l@gmail.com
+                password: qwerty
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/sign-up:
+    post:
+      tags:
+        - Auth
+      summary: SIGN_UP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                cc: '+91'
+                email: hj@gmail.com
+                password: qwerty
+                full_name: lakhan purohit
+                phno: 8238287787
+                role: 1
+                flag: 1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/auth/doctor/clinics/create:
+    post:
+      tags:
+        - Doctor > Clinics
+      summary: CREATE
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                address: Ahmedabad
+                cc: '+91'
+                name: Patel Clinic
+                phno: '0022115544'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/auth/doctor/clinics/update:
+    post:
+      tags:
+        - Doctor > Clinics
+      summary: UPDATE
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: '1'
+                license_media:
+                  type: string
+                  format: binary
+                license_no:
+                  type: integer
+                  example: '1252'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/pet/spices/add:
+    post:
+      tags:
+        - Pet > Spices
+      summary: ADD
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: ATest
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/pet/spices/get-list:
+    get:
+      tags:
+        - Pet > Spices
+      summary: GET-LIST
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/pet/spices/delete:
+    post:
+      tags:
+        - Pet > Spices
+      summary: DELETE
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 2
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

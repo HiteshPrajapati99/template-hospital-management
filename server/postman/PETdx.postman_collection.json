@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "e651820d-864a-49f3-a7cf-c017165a5583",
+		"name": "PETdx",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18965969"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"l@gmail.com\",\r\n    \"password\":\"qwerty\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "SIGN_UP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cc\":\"+91\",\r\n    \"email\":\"hj@gmail.com\",\r\n    \"password\":\"qwerty\",\r\n    \"full_name\":\"lakhan purohit\",\r\n    \"phno\":8238287787,\r\n    \"role\":1, // 1 - user, 2 - doctor, 3 - Admin\r\n    \"flag\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/sign-up"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "Clinics",
+					"item": [
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWREYXRhIjoiZDc5OGExZTBjYzVjZjcxNjdlMWUwN2ZiN2JkODE0YTZmYzAxMmRkNDgxZGY3MmRkMTNlZmM3ZTEwOTgzNWViOTk3MmE3ZmIyN2FlZTY3YWQ5NDFiZjg2M2RhOTdjNGI3IiwiaWF0IjoxNjkyODU0NjAyLCJleHAiOjE2OTI4NTgyMDJ9.a7QjnHjo7QK5kWD32mPydcKcgDKjnnbGV1d7TNX6noc"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"address\":\"Ahmedabad\",\r\n    \"cc\":\"+91\",\r\n    \"name\":\"Patel Clinic\",\r\n    \"phno\":\"0022115544\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/auth/doctor/clinics/create"
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWREYXRhIjoiZDc5OGExZTBjYzVjZjcxNjdlMWUwN2ZiN2JkODE0YTZmYzAxMmRkNDgxZGY3MmRkMTNlZmM3ZTEwOTgzNWViOTk3MmE3ZmIyN2FlZTY3YWQ5NDFiZjg2M2RhOTdjNGI3IiwiaWF0IjoxNjkyODY2NTk1LCJleHAiOjE2OTI4NzAxOTV9.X2BFJ8ubBT6maelK3Dpu4jIHo0OrbPopPYQRCqb34gY"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "license_media",
+											"type": "file",
+											"src": "/C:/Users/lakha/Downloads/image_2023_06_16T09_49_50_557Z.png"
+										},
+										{
+											"key": "license_no",
+											"value": "1252",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{url}}/api/auth/doctor/clinics/update"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Spices",
+					"item": [
+						{
+							"name": "ADD",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWREYXRhIjoiZDc5OGExZTBjYzVjZjcxNjdlMWUwN2ZiN2JkODE0YTZmYzAxMmRkNDgxZGY3MmRkMTNlZmM3ZTEwOTgzNWViOTk3MmE3ZmIyN2FlZTY3YWQ5NDFiZjg2M2RhOTdjNGI3IiwiaWF0IjoxNjkyODY2NTk1LCJleHAiOjE2OTI4NzAxOTV9.X2BFJ8ubBT6maelK3Dpu4jIHo0OrbPopPYQRCqb34gY"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"ATest\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/pet/spices/add"
+							},
+							"response": []
+						},
+						{
+							"name": "GET-LIST",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/api/pet/spices/get-list"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWREYXRhIjoiZDc5OGExZTBjYzVjZjcxNjdlMWUwN2ZiN2JkODE0YTZmYzAxMmRkNDgxZGY3MmRkMTNlZmM3ZTEwOTgzNWViOTk3MmE3ZmIyN2FlZTY3YWQ5NDFiZjg2M2RhOTdjNGI3IiwiaWF0IjoxNjkyODY2NTk1LCJleHAiOjE2OTI4NzAxOTV9.X2BFJ8ubBT6maelK3Dpu4jIHo0OrbPopPYQRCqb34gY"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/pet/spices/delete"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Color",
+					"item": []
+				},
+				{
+					"name": "Breed",
+					"item": []
+				},
+				{
+					"name": "Animal-Type",
+					"item": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:5001",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,86 @@
+.landing-bg {
+  background: url("../public/bg-video.mp4");
+}
+
+.logo-text {
+  color: #03f4f4;
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+  text-shadow:
+    82px 82px 205px rgba(1, 86, 90, 0.9),
+    -82px -82px 164px rgba(3, 255, 255, 0.9),
+    82px -82px 164px rgba(1, 86, 90, 0.2),
+    -82px 82px 164px rgba(1, 86, 90, 0.2);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.shadow-button {
+  background: linear-gradient(259deg, #005d69 0%, #60f1fb 100%);
+  border-radius: 30px;
+  box-shadow:
+    -16.36045265197754px 3.180150032043457px 33.33333206176758px 0px
+      rgba(0, 40, 48, 0.8),
+    -10.90696907043457px 2.1201000213623047px 11.11111068725586px 0px #17e3ff inset,
+    10.90696907043457px -2.1201000213623047px 11.11111068725586px 0px #005160 inset;
+}
+
+.shadow-text {
+  color: #fff;
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+  text-shadow:
+    -1px -1px 2px rgba(98, 98, 98, 0.8),
+    1px 1px 2px rgba(255, 255, 255, 0.1);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* input type number spin arrw remove */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* input remove hover county select */
+.react-tel-input .selected-flag:hover {
+  background-color: transparent;
+  border-radius: 16px 3px 3px 16px;
+}
+
+.react-tel-input .selected-flag:active {
+  border-radius: 16px 3px 3px 16px;
+}
+
+.scrollbar-hide::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  display: none;
+  width: 0px;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.vertualScroll_bar::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+  height: 10px;
+}
